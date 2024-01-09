@@ -1,0 +1,98 @@
+.nav-link {
+    transition: border-bottom 0.3s ease-in-out; /* Define transition for border-bottom property */
+  }
+  /* styles.css */
+.container-animation {
+    transition: opacity 0.3s ease-in-out; /* Define transition for opacity property */
+  }
+  
+.container-hidden {
+    opacity: 0; /* Hide the container by setting opacity to 0 */
+  }
+.theme{
+    background-color: #141A35;
+}
+.button{
+    padding-right: 20%;
+}  
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: #ffc107;
+}
+.border-bottom {
+    border-bottom: var(--bs-border-width) var(--bs-border-style) #ffc107!important;
+}.border-top {
+    border-top: var(--bs-border-width) var(--bs-border-style) #ffc107!important;
+}
+/* chat.css */
+.text-dark.active, 
+.text-dark:active, 
+.text-dark:focus, 
+.text-dark:hover{
+  background-color: white;
+  color: black;
+}
+.list-group-item {
+    border: var(--bs-list-group-border-width) solid #443e2a;
+}
+
+  .navbar-custom {
+    min-height: 63px; /* Adjust the height as needed */
+
+  }
+  
+  /* Adjust spacing and layout as needed */
+  .messages-container {
+    max-height: 70vh; /* Adjust the height based on navbar and other component heights */
+    overflow-y: auto;
+    display: block;
+  }
+ 
+  .IoIosArrowRoundBack{
+    height: 4em;
+    width: 4em;
+  }
+
+  .messages-container::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  .messages-container::-webkit-scrollbar-track {
+    background: #f1f1f100; /* Track color */
+  }
+  
+  .messages-container::-webkit-scrollbar-thumb {
+    background: #e1e1e1; /* Thumb color */
+    border-radius: 3px; /* Rounded corners */
+  }
+  
+  .messages-container::-webkit-scrollbar-thumb:hover {
+    background: #e4e4e4; /* Thumb color on hover */
+  }
+
+.send{
+  background-color: #ffc107;
+  color:#141A35;
+}
+.send:hover{
+  background-color: #141A35;
+  color: #ffc107;
+}
+
+
+.mentor {
+  background-color: #e6e6e6;
+  align-items: flex-start;
+}
+
+.student {
+  background-color: #007bff;
+  color: #fff;
+  align-items: flex-end;
+}
+.message {
+  padding: 8px 12px;
+  margin: 4px;
+  border-radius: 8px;
+  max-width: 70%;
+}
