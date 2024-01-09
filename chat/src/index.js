@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Landing from './components/landing';
 import ChatArea from './components/chatArea';
@@ -9,7 +9,7 @@ import ChatArea from './components/chatArea';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ChatArea />
+    <App />
   </React.StrictMode>
 );
 

@@ -40,21 +40,21 @@
     min-height: 63px; /* Adjust the height as needed */
 
   }
-  
-  /* Adjust spacing and layout as needed */
-  .messages-container {
-    max-height: 70vh; /* Adjust the height based on navbar and other component heights */
-    overflow-y: auto;
-    display: block;
+
+  .card-container{
+    border-radius: 0;
   }
- 
   .IoIosArrowRoundBack{
     height: 4em;
     width: 4em;
   }
-
+  .messages-container {
+    overflow-y: scroll;
+  }
+  
   .messages-container::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
+    
+    width: 1.5px; /* Width of the scrollbar */
   }
   
   .messages-container::-webkit-scrollbar-track {
@@ -63,13 +63,25 @@
   
   .messages-container::-webkit-scrollbar-thumb {
     background: #e1e1e1; /* Thumb color */
-    border-radius: 3px; /* Rounded corners */
+    border-radius: 6px; /* Rounded corners */
   }
   
   .messages-container::-webkit-scrollbar-thumb:hover {
     background: #e4e4e4; /* Thumb color on hover */
   }
 
+
+
+.btn-back{
+  background-color: #141A35;
+  color: white;
+  border-radius: 10vh;
+}
+.btn-back:hover{
+  background-color: white;
+  color: black;
+}
+  
 .send{
   background-color: #ffc107;
   color:#141A35;
@@ -80,19 +92,44 @@
 }
 
 
-.mentor {
-  background-color: #e6e6e6;
-  align-items: flex-start;
-}
-
-.student {
-  background-color: #007bff;
-  color: #fff;
-  align-items: flex-end;
-}
-.message {
+.mentor{
   padding: 8px 12px;
   margin: 4px;
-  border-radius: 8px;
+  border-radius: 10px;
+  display: flex;
   max-width: 70%;
+  background-color: #e6e6e6;
+  color: #000;
+}
+
+.student{
+  padding: 8px 12px;
+  margin: 4px;
+  max-width: 70%;
+  border-radius: 10px;
+  display: flex;
+  background-color: #007bff;
+  color: #fff;
+
+
+}
+.inputBlock{
+  border-radius: 8vh;
+  min-height: 7vh;
+  padding-left: 1vh;
+  padding-right: 1vh;
+  padding-bottom: 0vh;
+  margin-top: 2vh;
+
+}
+.justify-content-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end;
+}
+.fit-content{
+  padding: 0;
+  margin: 0;
 }

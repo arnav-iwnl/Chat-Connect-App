@@ -1,9 +1,8 @@
 // src/components/chatArea.js
 import React, { useState } from 'react';
-import Message from './format';
+import Message from './format'
 import { useNavigate } from 'react-router-dom';
-import App from '../App';
-import { Container, Card, ListGroup, InputGroup, Form, Image, Navbar, Nav, ButtonGroup, Button } from 'react-bootstrap';
+import { Container, Card, ListGroup, FormControl, InputGroup, Form, Image, Navbar, Nav, ButtonGroup, Button } from 'react-bootstrap';
 
 // Icons
 import { FaSearch } from 'react-icons/fa'; // Importing search icon
@@ -13,6 +12,7 @@ import { HiOutlinePencilSquare } from "react-icons/hi2";
 import { GoPeople } from "react-icons/go";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { MdKeyboardBackspace } from "react-icons/md";
+
 
 // CSS
 import '../css/chat.css';
@@ -24,16 +24,16 @@ import profile1 from '../images/profile1.png';
 import profile2 from '../images/profile2.png';
 
 
-const ChatArea = () => {
+const Annouce = () => {
 
-    const [activeTab, setActiveTab] = useState('home'); // State to manage active tab
-    // Hardcoded messages, subtexts, and associated profile pictures for demonstration
+    // const [activeTab, setActiveTab] = useState('home'); // State to manage active tab
+    // // Hardcoded messages, subtexts, and associated profile pictures for demonstration
 
-    const handleTabClick = (tab) => {
-        setActiveTab(tab);
-    };
+    // const handleTabClick = (tab) => {
+    //     setActiveTab(tab);
+    // };
 
-    const [activeButton, setActiveButton] = useState('All'); // State to manage active button
+    const [activeButton, setActiveButton] = useState('Broadcast'); // State to manage active button
 
     const handleButtonClick = (button) => {
         setActiveButton(button);
@@ -56,6 +56,7 @@ const ChatArea = () => {
     const navigate = useNavigate();
 
 
+
     return (
 
         <Container
@@ -63,12 +64,8 @@ const ChatArea = () => {
         >
             <Card className=" theme text-light min-vw-100">
                 <Card.Header className="text-left mt-3  d-flex flex-row">
-                <div >
-                        <Button className=' border-0 btn-back'
-                        onClick={() => {
-                            navigate('/');
-                            App.setActiveTab('home');
-                        }}>
+                    <div >
+                        <Button className=' border-0 btn-back' onClick={() => {navigate('/')}}>
                         <MdKeyboardBackspace size={'2em'} /> 
                         </Button>
                         
@@ -93,20 +90,37 @@ const ChatArea = () => {
 
                 <Card.Body className='max-vh-55 d-flex flex-column '>
                     <div className='messages-container mb-2 border-top border-orange pb-2 pt-3 px-0 m-0'>
-                        <ListGroup variant="flush">
-                            {messages.map((msg, index) => (
-                                <ListGroup.Item key={index} className="theme border-0 text-light m-0 px-0 d-flex my-2 w-100">
-                                    <div className='mx-2 d-flex w-100 '>
-                                            <Message sender={msg.user} text={msg.subtext} /> 
-                                    </div>
-                                </ListGroup.Item>
-                            ))}
-                        </ListGroup>
+                    <div>
+                        <ButtonGroup className="pb-3 pt-3">
+                            <Button
+                                variant={activeButton === 'Broadcast' ? 'light' : 'theme'} // Set variant based on activeButton
+                                className={` mx-2 px-4 rounded mr-2 ${activeButton === 'Broadcast' ? 'text-dark' : 'text-white'}`} // Conditional styling          variant={activeButton === 'All' ? 'dark' : 'light'}
+                                onClick={() => handleButtonClick('Broadcast')}
+                            >
+                                Broadcast
+                            </Button>
+                            <Button
+                                className={`rounded ${activeButton === 'Unicast' ? 'text-dark' : 'text-white'}`} // Conditional styling
+                                variant={activeButton === 'Unicast' ? 'light' : 'theme'}
+                                onClick={() => handleButtonClick('Unicast')}
+                            >
+                                Unicast
+                            </Button>
+                        </ButtonGroup>
                     </div>
-                    <div className=''>
-                        <InputGroup className="inputBlock">
+                     <div>
+                        <InputGroup className={`pb-2 m-0 ${activeButton === 'Unicast' ? 'opacity-100' : 'opacity-0' }`}>
+                            <FormControl className='rounded-pill fs-6 fw-normal' placeholder="Search your mentee" />
+                            <Button className='px-3 mx-1 rounded-pill text-dark bg-white border-0'> <RiUserSearchLine /></Button>
+                        </InputGroup>
+                     </div>
+                    
+                    </div>
+                    <div className=' m-0'>
+                        <InputGroup className="inputBlock m-0">
                             <Form.Control
-                                placeholder="Type your message"
+                                as="textarea"
+                                placeholder="Make an Announcement"
                                 aria-label="Recipient's username"
                                 aria-describedby="basic-addon2"
                             />
@@ -117,6 +131,11 @@ const ChatArea = () => {
                         </InputGroup>
                     </div>
                 </Card.Body>
+        
+
+
+
+
             </Card>
         </Container>
 
@@ -124,4 +143,4 @@ const ChatArea = () => {
     );
 }
 
-export default ChatArea;
+export default Annouce;
